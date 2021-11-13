@@ -16,8 +16,7 @@ jobs:
         run: ls
 
       - name: Create directory with branch name
-        run: rsync -r _templates/NewBranchAssets ${{ github.ref_name	}}
-        # run: cp -vaR _templates/NewBranchAssets ${{ github.ref_name	}}
+        run: mkdir -p ${{ github.ref_name	}} && cp -r _templates/NewBranchAssets "$_"
 
 
       - name: Add and commit new files
