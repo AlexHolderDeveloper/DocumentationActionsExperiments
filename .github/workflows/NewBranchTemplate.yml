@@ -15,5 +15,12 @@ jobs:
       - name: Check files
         run: ls
 
-      # - name: Create directory with branch name
-      #   run: cp -a
+      - name: Create directory with branch name
+        run: cp -a -templates/NewBranchAssets ${{ github.ref_name	}}
+
+      - name: Add and commit new files
+        uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
