@@ -16,7 +16,7 @@ jobs:
         run: ls
 
       - name: Create directory with branch name
-        run: cp -a _templates/NewBranchAssets ${{ github.ref_name	}}
+        run: cp -vaR _templates/NewBranchAssets ${{ github.ref_name	}}
 
       - name: Add and commit new files
         uses: EndBug/add-and-commit@v7
