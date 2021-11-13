@@ -16,7 +16,7 @@ jobs:
         run: ls
 
       - name: Create directory with branch name
-        run: mkdir -p ${{ github.ref_name	}} && cp -r _templates/NewBranchAssets "$_"
+        run: mkdir -p ${{ github.ref_name	}} && cp -a _templates/NewBranchAssets/. "$_"
 
 
       - name: Add and commit new files
