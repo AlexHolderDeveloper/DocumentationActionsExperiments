@@ -9,14 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: main
+          ref: ${{ github.ref_name	}}
           # token: ${{ secrets.GH_PAT }} If using a private repo - not sure about orgs
 
       - name: Check files
         run: ls
 
       - name: Create directory with branch name
-        run: cp -a _templates/NewBranchAssets ${{ github.ref_name	}}
+        run: cp -a _templates/NewBranchAssets content/${{ github.ref_name	}}
 
       - name: Add and commit new files
         uses: EndBug/add-and-commit@v7
